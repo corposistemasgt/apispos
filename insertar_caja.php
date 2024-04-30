@@ -1,0 +1,29 @@
+<?php
+require_once 'conexiones/admin.php';
+    if($_SERVER['REQUEST_METHOD']=='GET')
+    {
+        if(isset($_GET ['pass']) && isset($_GET ['nit']) )
+        {
+            $pass=$_GET ['pass'];
+            $nit=$_GET ['nit'];
+            $pdo = new Conexion();
+            date_default_timezone_set("America/Guatemala");
+            $fecha=date("Y").date("n").date("j").' '.date("H").date("i").date("s");
+            $sql = $pdo->prepare("insert into tbcajas(password,fecha,nit) values(:pass,:nit,:fecha)");
+            $sql->bindValue(':pass',$pass );
+            $sql->bindValue(':nit',$nit );
+            $sql->bindValue(':fecha',$fecha );
+            $sql ->execute();
+        }
+        else
+        {
+            $campos="Falta el campo de password o el nit";
+            echo json_encode(array("resultado"=>"false")); 
+        }
+    }
+    else
+    {
+;
+        echo json_encode(array("resultado"=>"false")); 
+    }
+?>
