@@ -11,7 +11,7 @@ require_once 'admin.php';
             $pdo = new Conexion();
             date_default_timezone_set("America/Guatemala");
             $fecha=date("Y").date("n").date("j").' '.date("H").date("i").date("s");
-            $sql = $pdo->prepare("insert into tbcajas(password,fecha,nit) values(:pass,:nit,:fecha)");
+            $sql = $pdo->prepare("insert into tbcajas(password,fecha,nit) values(:pass,:fecha:nit,)");
             $sql->bindValue(':pass',$pass );
             $sql->bindValue(':nit',$nit );
             $sql->bindValue(':fecha',$fecha );
