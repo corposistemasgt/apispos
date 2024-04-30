@@ -1,5 +1,5 @@
 <?php
-require_once 'conexiones/admin.php';
+require_once 'admin.php';
     if($_SERVER['REQUEST_METHOD']=='GET')
     {
         if(isset($_GET ['pass']) && isset($_GET ['nit']) )
@@ -23,7 +23,5 @@ require_once 'conexiones/admin.php';
     }
     else
     {
-;
         echo json_encode(array("resultado"=>"false")); 
     }
-?>
