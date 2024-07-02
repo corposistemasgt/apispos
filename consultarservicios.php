@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD']=='GET')
         $web.=',';
         echo $web;
         $nube='"nube":';
-        $query="SELECT llave,estid FROM `tbmynube` WHERE nit='".$nit."'";
+        $query="SELECT llave,estid,pachamama FROM `tbmynube` WHERE nit='".$nit."'";
         $sql = $pdo->prepare($query);
         $sql->bindValue(':nit',$nit);
         $sql->execute();
