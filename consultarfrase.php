@@ -21,11 +21,11 @@ if($_SERVER['REQUEST_METHOD']=='GET')
             <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
                 <soap:Body>
                     <RequestTransaction xmlns="http://www.fact.com.mx/schema/ws">
-                        <Requestor>94E0301E-AD36-4BAC-B327-B6B6B658469E</Requestor>
+                        <Requestor>7A1513A2-C414-4C46-AF7E-E9E966B1B2CC</Requestor>
                         <Transaction>SYSTEM_REQUEST</Transaction>
                         <Country>GT</Country>
-                        <Entity>800000001026</Entity>
-                        <User>94E0301E-AD36-4BAC-B327-B6B6B658469E</User>
+                        <Entity>108151654</Entity>
+                        <User>7A1513A2-C414-4C46-AF7E-E9E966B1B2CC</User>
                         <UserName>ADMINISTRADOR</UserName>
                         <Data1>MINIRTUFRFASES_QUERY_JSON</Data1>
                         <Data2>'.$nit.'</Data2>

@@ -25,11 +25,11 @@ error_reporting(E_ALL);
                     <SOAP-ENV:Header/>
                         <SOAP-ENV:Body>
                             <ws:RequestTransaction>
-                                <ws:Requestor>94E0301E-AD36-4BAC-B327-B6B6B658469E</ws:Requestor>
+                                <ws:Requestor>7A1513A2-C414-4C46-AF7E-E9E966B1B2CC</ws:Requestor>
                                 <ws:Transaction>SYSTEM_REQUEST</ws:Transaction>
                                 <ws:Country>GT</ws:Country>
-                                <ws:Entity>800000001026</ws:Entity>
-                                <ws:User>94E0301E-AD36-4BAC-B327-B6B6B658469E</ws:User>
+                                <ws:Entity>108151654</ws:Entity>
+                                <ws:User>7A1513A2-C414-4C46-AF7E-E9E966B1B2CC</ws:User>
                                 <ws:UserName>ADMINISTRADOR</ws:UserName>
                                 <ws:Data1>CONSULTA_CUI</ws:Data1>
                                 <ws:Data2>'.$nit.'</ws:Data2>
@@ -59,8 +59,8 @@ error_reporting(E_ALL);
 	                <soap:Body>
 		                <getNIT xmlns="http://tempuri.org/">
 			                <vNIT>'.$nit.'</vNIT>
-			                <Entity>800000001026</Entity>
-			                <Requestor>94E0301E-AD36-4BAC-B327-B6B6B658469E</Requestor>
+			                <Entity>108151654</Entity>
+			                <Requestor>7A1513A2-C414-4C46-AF7E-E9E966B1B2CC</Requestor>
 		                </getNIT>
 	                </soap:Body>
                 </soap:Envelope>',
