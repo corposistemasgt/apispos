@@ -21,8 +21,8 @@ if($_SERVER['REQUEST_METHOD']=='GET')
         $api.=',';
         echo $api;
         $web='"web":';
-        $query="select codigo,iduser,idtienda from tbsistema where nit='".$nit."' and 
-        establecimiento='".$esta."' and usuario='".$usuario."'";
+        $query="select codigo,iduser,idtienda from tbsistema where nit=:nit and 
+        establecimiento=:esta and usuario=:usuario";
         $sql = $pdo->prepare($query);
         $sql->bindValue(':nit',$nit);
         $sql->bindValue(':esta',$esta);
@@ -33,13 +33,22 @@ if($_SERVER['REQUEST_METHOD']=='GET')
         $web.=',';
         echo $web;
         $nube='"nube":';
-        $query="SELECT llave,estid,pachamama FROM `tbmynube` WHERE nit='".$nit."'";
+        $query="SELECT llave,estid,pachamama FROM `tbmynube` WHERE nit=:nit";
         $sql = $pdo->prepare($query);
         $sql->bindValue(':nit',$nit);
         $sql->execute();
         $sql->setFetchMode(PDO::FETCH_ASSOC);
         $nube.= json_encode($sql->fetchAll()); 
-        $nube.='}';
+        $nube.=',';
         echo $nube;
+        $codi='"codi":';
+        $query="SELECT codigo FROM tbusuariopacha WHERE usuario=:usuario";
+        $sql = $pdo->prepare($query);
+        $sql->bindValue(':usuario',$usuario);
+        $sql->execute();
+        $sql->setFetchMode(PDO::FETCH_ASSOC);
+        $codi.= json_encode($sql->fetchAll()); 
+        $codi.='}';
+        echo $codi;
     }
 }
