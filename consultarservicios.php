@@ -42,7 +42,7 @@ if($_SERVER['REQUEST_METHOD']=='GET')
         $nube.=',';
         echo $nube;
         $codi='"codi":';
-        $query="SELECT codigo FROM tbusuariopacha WHERE usuario=:usuario";
+        $query="SELECT codigo,usuario FROM tbusuariopacha order by usuario asc";
         $sql = $pdo->prepare($query);
         $sql->bindValue(':usuario',$usuario);
         $sql->execute();
